@@ -10,8 +10,7 @@ const urlsToCache = [
   '/offline.html',
   '/images/narkins-builders-logo.webp',
   '/favicon.ico',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png'
+  '/images/narkins-builders-logo.webp'
 ];
 
 // Install service worker
@@ -23,6 +22,7 @@ self.addEventListener('install', event => {
         return cache.addAll(urlsToCache);
       })
   );
+  self.skipWaiting();
 });
 
 // Fetch event - serve from cache when offline
@@ -72,14 +72,15 @@ self.addEventListener('activate', event => {
       );
     })
   );
+  self.clients.claim();
 });
 
 // Handle push notifications
 self.addEventListener('push', event => {
   const options = {
     body: event.data ? event.data.text() : 'New update available!',
-    icon: '/icons/icon-192x192.png',
-    badge: '/icons/icon-72x72.png',
+    icon: '/images/narkins-builders-logo.webp',
+    badge: '/images/narkins-builders-logo.webp',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
@@ -89,12 +90,12 @@ self.addEventListener('push', event => {
       {
         action: 'explore',
         title: 'View Projects',
-        icon: '/icons/icon-192x192.png'
+        icon: '/images/narkins-builders-logo.webp'
       },
       {
         action: 'close',
         title: 'Close',
-        icon: '/icons/icon-192x192.png'
+        icon: '/images/narkins-builders-logo.webp'
       }
     ]
   };
