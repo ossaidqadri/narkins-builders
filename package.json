@@ -43,7 +43,7 @@
     "clsx": "^2.1.1",
     "dompurify": "^3.2.6",
     "embla-carousel-react": "^8.6.0",
-    "eslint": "9.1.0",
+    "eslint": "^8.0.0",
     "eslint-config-next": "14.2.2",
     "framer-motion": "^12.23.3",
     "googleapis": "^152.0.0",
