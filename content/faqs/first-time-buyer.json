@@ -1,0 +1,64 @@
+{
+  "title": "First-Time Buyer FAQs",
+  "description": "Essential questions and answers for first-time property buyers in Bahria Town Karachi",
+  "category": "first-time-buyer",
+  "faqs": [
+    {
+      "id": "ftb-001",
+      "question": "How can I improve my chances of mortgage approval as a first-time buyer?",
+      "answer": "Build credit history 12-18 months before applying, maintain stable employment for 2+ years, keep debt-to-income ratio below 40%, and provide comprehensive financial documentation including tax returns and bank statements.",
+      "tags": ["mortgage", "approval", "credit-history", "documentation"],
+      "priority": 1
+    },
+    {
+      "id": "ftb-002",
+      "question": "What documents should I verify before signing any purchase agreement?",
+      "answer": "Verify property title documents, NOC from relevant authorities, approved building plans, utility connections, possession certificate, and ensure all legal clearances are in place. Always hire a qualified property lawyer for due diligence.",
+      "tags": ["documentation", "legal", "verification", "purchase-agreement"],
+      "priority": 2
+    },
+    {
+      "id": "ftb-003",
+      "question": "How much should I budget beyond the property purchase price?",
+      "answer": "Budget an additional 25-30% above the purchase price for registration fees (2-3%), stamp duty, legal fees, bank charges, property inspection costs, moving expenses, and initial setup costs like utilities and maintenance.",
+      "tags": ["budget", "additional-costs", "registration-fees", "expenses"],
+      "priority": 3
+    },
+    {
+      "id": "ftb-004",
+      "question": "What government schemes are available for first-time buyers in Pakistan?",
+      "answer": "Available schemes include Naya Pakistan Housing Scheme with subsidized loans, State Bank refinancing for discounted mortgage rates, tax benefits for first-time buyers, and special programs for young professionals aged 21-40.",
+      "tags": [
+        "government-schemes",
+        "subsidized-loans",
+        "tax-benefits",
+        "young-professionals"
+      ],
+      "priority": 4
+    },
+    {
+      "id": "ftb-005",
+      "question": "How do I avoid common first-time buyer mistakes?",
+      "answer": "Don't fall in love with the first property you see, avoid buying beyond your budget due to pressure, don't ignore location importance for cosmetic features, and always conduct thorough market research before making decisions.",
+      "tags": [
+        "common-mistakes",
+        "market-research",
+        "budget-discipline",
+        "location-importance"
+      ],
+      "priority": 5
+    },
+    {
+      "id": "ftb-006",
+      "question": "What should I look for during property inspection?",
+      "answer": "Check structural integrity, plumbing and electrical systems, water pressure, ventilation, natural lighting, noise levels, security features, parking availability, and proximity to essential services like hospitals and schools.",
+      "tags": [
+        "property-inspection",
+        "structural-integrity",
+        "utilities",
+        "location-factors"
+      ],
+      "priority": 6
+    }
+  ]
+}

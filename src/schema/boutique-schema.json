@@ -1,0 +1,21 @@
+{
+  "name": "Narkin's Boutique Residency - Ultra-Luxury Apartments",
+  "@type": "RealEstateListing",
+  "url": "https://www.narkinsbuilders.com/narkins-boutique-residency",
+  "numberOfBedrooms": "2-3",
+  "address": {
+    "addressCountry": "PK",
+    "streetAddress": "Heritage Commercial Area",
+    "addressLocality": "Bahria Town",
+    "@type": "PostalAddress",
+    "addressRegion": "Karachi, Sindh"
+  },
+  "seller": {
+    "name": "Narkin's Builders and Developers",
+    "telephone": "+92-320-324-3970",
+    "@type": "RealEstateAgent"
+  },
+  "@context": "https://schema.org",
+  "price": "32000000",
+  "priceCurrency": "PKR"
+}

@@ -1,0 +1,49 @@
+{
+  "title": "General Real Estate FAQs",
+  "description": "Common questions about real estate investment and property buying in Bahria Town Karachi",
+  "category": "general",
+  "faqs": [
+    {
+      "id": "general-001",
+      "question": "Why should I invest in Bahria Town Karachi real estate?",
+      "answer": "Bahria Town Karachi is Pakistan's premier planned community offering modern infrastructure, security, amenities, and consistent property value appreciation. It's an ideal location for both residential living and investment with excellent ROI potential.",
+      "tags": ["investment", "bahria-town", "roi"],
+      "priority": 1
+    },
+    {
+      "id": "general-002",
+      "question": "What makes Narkin's Builders different from other developers?",
+      "answer": "With over 30 years of experience since 1994, Narkin's Builders has a proven track record of delivering quality projects on time. We focus on luxury construction, customer satisfaction, and creating iconic living experiences with transparent business practices.",
+      "tags": ["narkins-builders", "experience", "quality"],
+      "priority": 2
+    },
+    {
+      "id": "general-003",
+      "question": "What is the typical ROI for apartments in Bahria Town Karachi?",
+      "answer": "Property values in Bahria Town Karachi have historically appreciated 10-15% annually. Rental yields typically range from 6-8% per year, making it one of the most attractive real estate investment destinations in Pakistan.",
+      "tags": ["roi", "rental-yield", "appreciation"],
+      "priority": 3
+    },
+    {
+      "id": "general-004",
+      "question": "Do you offer property management services?",
+      "answer": "Yes, we provide comprehensive support including assistance with property documentation, legal procedures, and can recommend trusted property management services for rental properties and maintenance.",
+      "tags": ["property-management", "services", "support"],
+      "priority": 4
+    },
+    {
+      "id": "general-005",
+      "question": "What financing options are available for property purchase?",
+      "answer": "We work with leading banks and financial institutions to facilitate property financing. Our team can assist with mortgage applications, documentation, and connecting you with suitable financing options based on your requirements.",
+      "tags": ["financing", "mortgage", "banks"],
+      "priority": 5
+    },
+    {
+      "id": "general-006",
+      "question": "How can I schedule a site visit?",
+      "answer": "You can schedule a site visit by calling us at +92 320 324 3970, filling out our contact form on the website, or visiting our sales office. We provide guided tours of our projects and surrounding areas at your convenience.",
+      "tags": ["site-visit", "contact", "tours"],
+      "priority": 6
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+.mcp.js
+# Testing
+/coverage
+
+# Next.js Build Files
+/.next/
+/out/
+GOOGLE-SEARCH-CONSOLE-SUBMISSION-GUIDE.md
+2025-10-17-show-search-analytics-for-narkins-builders-webs.txt
+SEO-ANALYSIS-REPORT-2025-10-17.md
+SEO-ANALYSIS-REPORT-2025-10-17.md
+# Production
+/build
+
+# Misc
+.DS_Store
+*.pem
+pnpm-lock.yaml
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vercel
+.vercel
+vercel.json
+
+
+# TypeScript Auto-generated
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# AI Assistant files
+CLAUDE.md
+.claude/
+claude.md
+gemini.md
+BLOG_WRITING_GUIDE.md
+BLOG_BUILD_OPTIMIZATION_ANALYSIS.md
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+# Windows Zone Identifier files
+*:Zone.Identifier
+
+# Logs
+logs/
+*.log
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# nyc test coverage
+.nyc_output
+
+# Optional npm cache directory
+.npm
+
+# Build caches
+.eslintcache
+.tsbuildinfo
+.blog-cache/
+.mdx-cache/
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Local database files (if you ever add them)
+*.db
+*.sqlite
+*.sqlite3
+
+# Firebase config (if using Firebase)
+firebase-debug.log
+.firebase/
+
+# Sentry config files
+.sentryclirc
+
+# Image SEO Backup Files (cleanup after optimization)
+**/backup_original_images/
+**/old_images_backup/
+**/hcr_appartment/
+**/narkins_appartment_renamed_files/
+
+update-components.ps1
+image-rename-*.ps1
+*-backup.txt
+old-component-references.*
+
+# Manual backup folders (should not be in repository)
+MANUAL_BACKUP*/
+**/MANUAL_BACKUP*/
+backup_*_*/
+backup/
+
+# Old image formats (after WebP conversion - cleaned up 2025-07-01)
+public/**/*.jpg
+public/**/*.jpeg
+public/**/*.png
+public/**/*.gif
+public/**/*.bmp
+public/**/*.tiff
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+
+# Backup folders from image conversion
+OLD_IMAGE_FORMATS_BACKUP*/
+
+# Blog automation
+logs/
+*.log
+scripts/temp/
+
+# =============================================================================
+# ENVIRONMENT VARIABLES - SECURITY CRITICAL
+# =============================================================================
+# Never commit actual environment files with sensitive data
+.env.local
+.env
+.env*.local
+.env.production
+.env.development
+.env.test
+
+# But allow the template file
+!.env.example
+
+# =============================================================================
+# COMMENT SYSTEM - SENSITIVE DATA
+# =============================================================================
+# Database credentials and API keys should never be committed
+**/database-credentials.*
+**/api-keys.*
+**/secrets.*
+.ignored/
+
+# =============================================================================
+# GOOGLE INDEXING API - SECURITY CRITICAL
+# =============================================================================
+# Never commit service account credentials
+scripts/service-account.json
+**/service-account*.json
+
+# SEO Keyword Research Files
+SEO_KEYWORDS.md
+/src/SEO_KEYWORDS.md

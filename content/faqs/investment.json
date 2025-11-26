@@ -1,0 +1,74 @@
+{
+  "title": "Real Estate Investment FAQs",
+  "description": "Key questions about property investment opportunities and strategies in Bahria Town Karachi",
+  "category": "investment",
+  "faqs": [
+    {
+      "id": "inv-001",
+      "question": "What is the expected ROI for properties in Bahria Town Karachi?",
+      "answer": "Historically, properties in Bahria Town Karachi have shown 10-15% annual appreciation with rental yields of 6-8% per year. Premium locations and luxury developments often perform better than average market rates.",
+      "tags": ["roi", "appreciation", "rental-yields", "bahria-town"],
+      "priority": 1
+    },
+    {
+      "id": "inv-002",
+      "question": "Should I buy for capital appreciation or rental income?",
+      "answer": "Both strategies work in Bahria Town. For capital appreciation, focus on under-construction premium projects. For rental income, choose ready properties in established blocks with good connectivity and amenities.",
+      "tags": [
+        "capital-appreciation",
+        "rental-income",
+        "investment-strategy",
+        "ready-properties"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "inv-003",
+      "question": "What factors affect property values in Bahria Town?",
+      "answer": "Key factors include location within Bahria Town, proximity to main boulevard, developer reputation, construction quality, amenities offered, security level, infrastructure development, and overall market sentiment.",
+      "tags": [
+        "property-values",
+        "location-factors",
+        "infrastructure",
+        "developer-reputation"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "inv-004",
+      "question": "Is it better to invest in apartments or houses in Bahria Town?",
+      "answer": "Apartments offer lower entry cost, professional management, and better security, making them ideal for rental income. Houses provide more privacy and potential for higher appreciation but require more maintenance investment.",
+      "tags": [
+        "apartments-vs-houses",
+        "entry-cost",
+        "maintenance",
+        "rental-potential"
+      ],
+      "priority": 4
+    },
+    {
+      "id": "inv-005",
+      "question": "What are the tax implications of property investment?",
+      "answer": "Capital gains tax applies on profit from property sales (varies by holding period), rental income is subject to income tax, and withholding tax may apply on transactions. Consult a tax advisor for specific scenarios.",
+      "tags": [
+        "tax-implications",
+        "capital-gains-tax",
+        "rental-income-tax",
+        "withholding-tax"
+      ],
+      "priority": 5
+    },
+    {
+      "id": "inv-006",
+      "question": "How do I evaluate a property development company before investing?",
+      "answer": "Research their track record, completed projects, delivery timelines, financial stability, legal approvals, customer reviews, and after-sales service. Visit their existing projects to assess construction quality and management.",
+      "tags": [
+        "developer-evaluation",
+        "track-record",
+        "due-diligence",
+        "project-quality"
+      ],
+      "priority": 6
+    }
+  ]
+}

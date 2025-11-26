@@ -1,0 +1,142 @@
+{
+  "name": "Narkin's Builders",
+  "short_name": "Narkin's",
+  "description": "Premium real estate developer in Bahria Town Karachi specializing in luxury apartments and residential projects",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/icons/icon-16x16.svg",
+      "sizes": "16x16",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-32x32.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-72x72.svg",
+      "sizes": "72x72",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-96x96.svg",
+      "sizes": "96x96",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-128x128.svg",
+      "sizes": "128x128",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-144x144.svg",
+      "sizes": "144x144",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-152x152.svg",
+      "sizes": "152x152",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192x192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-384x384.svg",
+      "sizes": "384x384",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "lifestyle", "productivity"],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "handle_links": "preferred",
+  "shortcuts": [
+    {
+      "name": "View Projects",
+      "short_name": "Projects",
+      "description": "Browse our luxury apartment projects",
+      "url": "/narkins-boutique-residency",
+      "icons": [{ "src": "/icons/icon-192x192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Hill Crest Residency",
+      "short_name": "Hill Crest",
+      "description": "View Hill Crest Residency project details",
+      "url": "/hill-crest-residency",
+      "icons": [{ "src": "/icons/icon-192x192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get in touch with our sales team",
+      "url": "/#contact",
+      "icons": [{ "src": "/icons/icon-192x192.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Latest Blog",
+      "short_name": "Blog",
+      "description": "Read our latest real estate insights",
+      "url": "/blog",
+      "icons": [{ "src": "/icons/icon-192x192.svg", "sizes": "192x192" }]
+    }
+  ],
+  "share_target": {
+    "action": "/api/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "mailto",
+      "url": "/#contact?email=%s"
+    },
+    {
+      "protocol": "tel",
+      "url": "/#contact?phone=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/",
+      "accept": {
+        "image/*": [".png", ".jpg", ".jpeg", ".webp", ".gif"],
+        "application/pdf": [".pdf"]
+      }
+    }
+  ]
+}

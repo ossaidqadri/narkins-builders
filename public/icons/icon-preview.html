@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narkin's Builders - PWA Icon Preview</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .icon-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+        .icon-item h3 {
+            margin: 0 0 15px 0;
+            color: #495057;
+            font-size: 14px;
+        }
+        .icon-container {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .usage-info {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+        }
+        .usage-info h2 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        .file-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Narkin's Builders - PWA Icon Preview</h1>
+        
+        <div class="icon-grid">
+            <div class="icon-item">
+                <h3>16×16 (Favicon)</h3>
+                <div class="icon-container">
+                    <img src="icon-16x16.svg" width="16" height="16" alt="16x16 icon">
+                </div>
+            </div>
+            
+            <div class="icon-item">
+                <h3>32×32 (Favicon)</h3>
+                <div class="icon-container">
+                    <img src="icon-32x32.svg" width="32" height="32" alt="32x32 icon">
+                </div>
+            </div>
+            
+            <div class="icon-item">
+                <h3>72×72 (Android)</h3>
+                <div class="icon-container">
+                    <img src="icon-72x72.svg" width="72" height="72" alt="72x72 icon">
+                </div>
+            </div>
+            
+            <div class="icon-item">
+                <h3>96×96 (Android)</h3>
+                <div class="icon-container">
+                    <img src="icon-96x96.svg" width="96" height="96" alt="96x96 icon">
+                </div>
+            </div>
+            
+            <div class="icon-item">
+                <h3>128×128 (Chrome)</h3>
+                <div class="icon-container">
+                    <img src="icon-128x128.svg" width="128" height="128" alt="128x128 icon">
+                </div>
+            </div>
+            
+            <div class="icon-item">
+                <h3>144×144 (Windows)</h3>
+                <div class="icon-container">
+                    <img src="icon-144x144.svg" width="144" height="144" alt="144x144 icon">
+                </div>
+            </div>
+            
+            <div class="icon-item">
+                <h3>152×152 (iOS)</h3>
+                <div class="icon-container">
+                    <img src="icon-152x152.svg" width="152" height="152" alt="152x152 icon">
+                </div>
+            </div>
+            
+            <div class="icon-item">
+                <h3>192×192 (Android)</h3>
+                <div class="icon-container">
+                    <img src="icon-192x192.svg" width="192" height="192" alt="192x192 icon">
+                </div>
+            </div>
+            
+            <div class="icon-item">
+                <h3>384×384 (Android)</h3>
+                <div class="icon-container">
+                    <img src="icon-384x384.svg" width="384" height="384" alt="384x384 icon">
+                </div>
+            </div>
+            
+            <div class="icon-item">
+                <h3>512×512 (PWA)</h3>
+                <div class="icon-container">
+                    <img src="icon-512x512.svg" width="512" height="512" alt="512x512 icon">
+                </div>
+            </div>
+        </div>
+        
+        <div class="usage-info">
+            <h2>Next Steps</h2>
+            <p><strong>Convert SVG to PNG:</strong> Use the conversion guide in <code>convert-icons.md</code> to convert these SVG files to PNG format.</p>
+            
+            <p><strong>Required PNG Files:</strong></p>
+            <div class="file-list">
+icon-16x16.png<br>
+icon-32x32.png<br>
+icon-72x72.png<br>
+icon-96x96.png<br>
+icon-128x128.png<br>
+icon-144x144.png<br>
+icon-152x152.png<br>
+icon-192x192.png<br>
+icon-384x384.png<br>
+icon-512x512.png
+            </div>
+            
+            <p><strong>Icon Features:</strong></p>
+            <ul>
+                <li>Premium dark theme with black background (#1a1a1a)</li>
+                <li>Modern "N" typography in white for brand recognition</li>
+                <li>Subtle building silhouette for real estate context</li>
+                <li>Gold accent line (#c9a96e) for premium appearance</li>
+                <li>Optimized for each size from 16px to 512px</li>
+            </ul>
+            
+            <p><strong>Manifest Updated:</strong> The <code>manifest.json</code> file has been updated to include all icon sizes for proper PWA functionality.</p>
+        </div>
+    </div>
+</body>
+</html>

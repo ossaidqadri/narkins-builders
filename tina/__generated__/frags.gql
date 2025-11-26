@@ -1,0 +1,32 @@
+fragment BlogParts on Blog {
+  __typename
+  title
+  excerpt
+  date
+  image
+  readTime
+  lastModified
+  season
+  priority
+  automatedUpdate
+  marketTiming
+  dateFixed
+  keywords
+  body
+}
+
+fragment FaqParts on Faq {
+  __typename
+  title
+  description
+  category
+  projectId
+  faqs {
+    __typename
+    id
+    question
+    answer
+    tags
+    priority
+  }
+}

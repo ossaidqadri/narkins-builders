@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background for premium look -->
+  <rect width="512" height="512" fill="#1a1a1a" rx="80"/>
+  
+  <!-- Building silhouette in background -->
+  <g opacity="0.3">
+    <rect x="80" y="240" width="40" height="200" fill="#333333"/>
+    <rect x="130" y="220" width="45" height="220" fill="#2a2a2a"/>
+    <rect x="185" y="180" width="50" height="260" fill="#333333"/>
+    <rect x="245" y="160" width="55" height="280" fill="#2a2a2a"/>
+    <rect x="310" y="200" width="45" height="240" fill="#333333"/>
+    <rect x="365" y="230" width="40" height="210" fill="#2a2a2a"/>
+    <rect x="415" y="250" width="35" height="190" fill="#333333"/>
+  </g>
+  
+  <!-- Modern "N" letterform -->
+  <g fill="#ffffff">
+    <!-- Left vertical bar -->
+    <rect x="120" y="140" width="50" height="232" fill="#ffffff"/>
+    
+    <!-- Diagonal connecting bar -->
+    <polygon points="170,140 220,140 342,320 292,320" fill="#ffffff"/>
+    
+    <!-- Right vertical bar -->
+    <rect x="342" y="140" width="50" height="232" fill="#ffffff"/>
+  </g>
+  
+  <!-- Premium accent line -->
+  <rect x="120" y="380" width="272" height="4" fill="#c9a96e"/>
+</svg>

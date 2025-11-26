@@ -1,0 +1,36 @@
+{
+  "buildCommand": "bun run build:cms",
+  "devCommand": "bun run dev:next",
+  "installCommand": "bun install",
+  "framework": "nextjs",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "build": {
+    "env": {
+      "NEXT_TELEMETRY_DISABLED": "1"
+    }
+  },
+  "github": {
+    "autoJobCancelation": false
+  },
+  "functions": {
+    "src/pages/api/sitemap.xml.ts": {
+      "maxDuration": 30
+    },
+    "src/pages/api/rss.xml.ts": {
+      "maxDuration": 30
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=3600, stale-while-revalidate"
+        }
+      ]
+    }
+  ]
+}
