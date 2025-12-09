@@ -4,9 +4,17 @@ import { Fragment, useEffect, useRef, useState } from "react"
 export default function VideoPlayer({
   src,
   poster,
+  aspectRatio = "16/9",
+  muted = true,
+  showControls = false,
+  containerClass,
 }: {
   src: string
   poster?: string
+  aspectRatio?: "16/9" | "9/16" | "4/3" | "1/1" | "21/9"
+  muted?: boolean
+  showControls?: boolean
+  containerClass?: string
 }) {
   const [videoProgress, setVideoProgress] = useState<number>(0)
   const [videoDuration, setVideoDuration] = useState<number>()
@@ -16,6 +24,25 @@ export default function VideoPlayer({
   const [isLoading, setIsLoading] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+
+  const aspectRatioMap: Record<string, number> = {
+    "16/9": 16 / 9,
+    "9/16": 9 / 16,
+    "4/3": 4 / 3,
+    "1/1": 1,
+    "21/9": 21 / 9,
+  }
+
+  const aspectRatioClasses: Record<string, string> = {
+    "16/9": "aspect-video",
+    "9/16": "aspect-[9/16]",
+    "4/3": "aspect-[4/3]",
+    "1/1": "aspect-square",
+    "21/9": "aspect-[21/9]",
+  }
+
+  const containerAspectRatio = aspectRatioMap[aspectRatio] || 16 / 9
+  const containerClassName = aspectRatioClasses[aspectRatio] || "aspect-video"
 
   // Intersection Observer for lazy loading
   useEffect(() => {
@@ -50,8 +77,8 @@ export default function VideoPlayer({
     const video = videoRef.current
     if (video) {
       setVideoDuration(video.duration)
-      // Enforce iPhone-compatible settings
-      video.muted = true
+      // Set muted based on prop
+      video.muted = muted
       video.playsInline = true
       if (isVisible) {
         video
@@ -59,7 +86,7 @@ export default function VideoPlayer({
           .catch((error) => console.error("Video autoplay failed:", error))
       }
     }
-  }, [isVisible])
+  }, [isVisible, muted])
 
   useEffect(() => {
     if (isPaused) return
@@ -87,18 +114,26 @@ export default function VideoPlayer({
     }
   }
 
+  const handleScrubberClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const video = videoRef.current
+    if (!video || videoDuration == null) return
+
+    const container = e.currentTarget
+    const rect = container.getBoundingClientRect()
+    const percent = (e.clientX - rect.left) / rect.width
+    video.currentTime = percent * videoDuration
+  }
+
   return (
     <div
       ref={containerRef}
-      className="relative w-full rounded-xl overflow-hidden my-8"
-      style={{ aspectRatio: "16/9" }} // 1920x1080 aspect ratio
+      className={`relative w-full rounded-xl overflow-hidden my-8 ${containerClassName} ${containerClass || ""}`}
     >
       {!shouldLoad ? (
         // Lazy loading placeholder with poster image
         <div
           className="w-full h-full relative flex items-center justify-center"
           style={{
-            aspectRatio: "16/9",
             backgroundImage: poster
               ? `url(${poster})`
               : "linear-gradient(to bottom right, #e5e7eb, #d1d5db)",
@@ -143,13 +178,15 @@ export default function VideoPlayer({
         </div>
       ) : (
         <Fragment>
-          <div className="absolute top-4 right-4 z-10">
-            <VideoPlayerControls
-              progress={videoProgress}
-              isPaused={isPaused}
-              onPlayPause={togglePlayPause}
-            />
-          </div>
+          {showControls && (
+            <div className="absolute top-4 right-4 z-10">
+              <VideoPlayerControls
+                progress={videoProgress}
+                isPaused={isPaused}
+                onPlayPause={togglePlayPause}
+              />
+            </div>
+          )}
           <video
             className="w-full h-full object-cover bg-neutral-300"
             poster={poster}
@@ -158,13 +195,13 @@ export default function VideoPlayer({
             loop
             autoPlay={isVisible}
             playsInline
-            muted
+            muted={muted}
             controls={false}
             disablePictureInPicture
             {...({ "webkit-playsinline": "true" } as any)}
             {...({ "x5-playsinline": "true" } as any)}
             {...({ "x5-video-player-type": "h5" } as any)}
-            style={{ aspectRatio: "16/9" }}
+            style={{ aspectRatio: `${aspectRatio}` }}
           >
             <source src={src} type="video/mp4" />
             Your browser does not support the video tag.

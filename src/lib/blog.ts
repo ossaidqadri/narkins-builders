@@ -10,6 +10,7 @@ export interface BlogPost {
   lastModified?: string
   keywords?: string
   author?: string
+  hideHeroImage?: boolean
 }
 
 // This will be populated by getStaticProps

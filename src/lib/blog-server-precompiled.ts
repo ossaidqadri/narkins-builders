@@ -248,6 +248,7 @@ function getAllPostsFromFS(): BlogPost[] {
           content: matterResult.content,
           readTime: matterResult.data.readTime || "5 min read",
           keywords: matterResult.data.keywords || "",
+          hideHeroImage: matterResult.data.hideHeroImage || false,
           lastModified: new Date(stat.mtime).toISOString(),
         }
 
@@ -386,6 +387,7 @@ function getPostFromFS(slug: string): BlogPost | null {
       content: matterResult.content,
       readTime: matterResult.data.readTime || "5 min read",
       keywords: matterResult.data.keywords || "",
+      hideHeroImage: matterResult.data.hideHeroImage || false,
       lastModified: new Date(stat.mtime).toISOString(),
     }
 
