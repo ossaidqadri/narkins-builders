@@ -174,6 +174,14 @@ export default function Document() {
       </Head>
       <body>
         <Main />
+        <script
+          id="messenger-widget-b"
+          src="https://cdn.botpenguin.com/website-bot.js"
+          defer
+          dangerouslySetInnerHTML={{
+            __html: "6943df122cd09804d729d5b3,68c54a1b0465f3560d0d5bce",
+          }}
+        />
         <NextScript />
       </body>
     </Html>
