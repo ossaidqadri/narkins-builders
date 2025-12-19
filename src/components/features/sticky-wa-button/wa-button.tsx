@@ -22,7 +22,7 @@ export default function WAButton() {
   return (
     <Link
       href="#"
-      className="fixed bottom-4 right-4 z-[999] flex items-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white px-3 py-2 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+      className="fixed bottom-24 right-4 z-[999] flex items-center gap-2 bg-[#25D366] hover:bg-[#20BA5A] text-white px-3 py-2 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
       onClick={handleWhatsAppClick}
     >
       <svg viewBox="0 0 32 32" className="w-5 h-5 whatsapp-ico">
