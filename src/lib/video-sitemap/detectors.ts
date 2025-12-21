@@ -84,7 +84,7 @@ export async function detectBlogVideos(): Promise<VideoMetadata[]> {
               description: (frontmatter.excerpt as string) || 'Video content',
               thumbnailUrl: frontmatter.image ? constructFullUrl(frontmatter.image as string) : '/media/common/blog-placeholder.webp',
               contentUrl: constructFullUrl(videoSrc),
-              pageUrl: blogUrl,
+              pageUrl: constructFullUrl(blogUrl),
               uploadDate: frontmatter.date ? formatISODate(frontmatter.date as string) : new Date().toISOString(),
               familyFriendly: true,
             }
@@ -118,7 +118,7 @@ export async function detectPropertyVideos(): Promise<VideoMetadata[]> {
       description: video.description,
       thumbnailUrl: constructFullUrl(video.thumbnailUrl),
       contentUrl: constructFullUrl(video.videoUrl),
-      pageUrl: video.pageUrl,
+      pageUrl: constructFullUrl(video.pageUrl),
       familyFriendly: true,
     }
 
@@ -186,7 +186,7 @@ export async function detectYouTubeVideos(): Promise<VideoMetadata[]> {
         description: youtubeVideo.description || 'Video content from Narkin\'s Builders',
         thumbnailUrl: oembedData?.thumbnail_url || `https://img.youtube.com/vi/${youtubeVideo.id}/maxresdefault.jpg`,
         playerUrl: `https://www.youtube.com/watch?v=${youtubeVideo.id}`,
-        pageUrl: youtubeVideo.pageUrl,
+        pageUrl: constructFullUrl(youtubeVideo.pageUrl),
         familyFriendly: true,
       }
 
