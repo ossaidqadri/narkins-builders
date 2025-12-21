@@ -95,6 +95,32 @@ export const LocalBusinessSchema = () => {
             name: "Hill Crest Residency",
             description:
               "2, 3 & 4 bedroom luxury apartments in Bahria Town Karachi",
+            image: "https://www.narkinsbuilders.com/media/hcr/exterior/hill-crest-residency-exterior-view-bahria-town-karachi.webp",
+            url: "https://www.narkinsbuilders.com/hill-crest-residency",
+            brand: {
+              "@type": "Brand",
+              name: "Narkin's Builders"
+            },
+            offers: {
+              "@type": "AggregateOffer",
+              priceCurrency: "PKR",
+              lowPrice: "9000000",
+              highPrice: "30000000",
+              offerCount: "100",
+              availability: "https://schema.org/InStock",
+              url: "https://www.narkinsbuilders.com/hill-crest-residency",
+              seller: {
+                "@type": "Organization",
+                name: "Narkin's Builders"
+              }
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.5",
+              reviewCount: "50",
+              bestRating: "5",
+              worstRating: "1"
+            }
           },
         },
         {
@@ -104,6 +130,32 @@ export const LocalBusinessSchema = () => {
             name: "Narkin's Boutique Residency",
             description:
               "Premium residential apartments with world-class amenities",
+            image: "https://www.narkinsbuilders.com/media/nbr/exterior/narkins-boutique-residency-exterior-heritage-commercial-bahria-town.webp",
+            url: "https://www.narkinsbuilders.com/narkins-boutique-residency",
+            brand: {
+              "@type": "Brand",
+              name: "Narkin's Builders"
+            },
+            offers: {
+              "@type": "AggregateOffer",
+              priceCurrency: "PKR",
+              lowPrice: "9000000",
+              highPrice: "30000000",
+              offerCount: "50",
+              availability: "https://schema.org/InStock",
+              url: "https://www.narkinsbuilders.com/narkins-boutique-residency",
+              seller: {
+                "@type": "Organization",
+                name: "Narkin's Builders"
+              }
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.7",
+              reviewCount: "35",
+              bestRating: "5",
+              worstRating: "1"
+            }
           },
         },
       ],
