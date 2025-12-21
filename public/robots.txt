@@ -2,8 +2,7 @@
 User-agent: *
 Allow: /
 
-# Host
-Host: https://www.narkinsbuilders.com
-
 # Sitemaps
 Sitemap: https://www.narkinsbuilders.com/sitemap.xml
+Sitemap: https://www.narkinsbuilders.com/sitemap-videos.xml
+Sitemap: https://www.narkinsbuilders.com/sitemap-images.xml

@@ -9,6 +9,25 @@ module.exports = {
   // This will automatically generate a robots.txt file for you
   generateRobotsTxt: true,
 
+  // Configure robots.txt generation
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+    ],
+    additionalSitemaps: [
+      'https://www.narkinsbuilders.com/sitemap-videos.xml',
+      'https://www.narkinsbuilders.com/sitemap-images.xml',
+    ],
+    // Disable deprecated Host directive
+    transformRobotsTxt: async (_, robotsTxt) => {
+      // Remove deprecated Host directive
+      return robotsTxt.replace(/# Host\nHost: .*\n\n/g, '')
+    },
+  },
+
   // (Optional) If you have any pages you want to exclude from the sitemap
   exclude: ["/api/*", "/admin/*", "/admin-tina"],
 
