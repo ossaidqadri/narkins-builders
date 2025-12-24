@@ -442,6 +442,36 @@ const nextConfig = {
         destination: "/blog/",
         permanent: true,
       },
+      {
+        source: "/al-arz-terrace/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/al-arz-terrace",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/law",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/law/",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/Narkin",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/Narkin/",
+        destination: "/",
+        permanent: true,
+      },
     ]
   },
   images: {
