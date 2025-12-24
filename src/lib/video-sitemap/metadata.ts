@@ -35,9 +35,11 @@ export async function extractDuration(videoPath: string): Promise<number | undef
 
 export function formatISODate(date: Date | string): string {
   if (typeof date === 'string') {
-    return new Date(date).toISOString()
+    // Convert to ISO string and remove milliseconds for Schema.org compatibility
+    return new Date(date).toISOString().replace(/\.\d{3}Z$/, 'Z')
   }
-  return date.toISOString()
+  // Convert to ISO string and remove milliseconds for Schema.org compatibility
+  return date.toISOString().replace(/\.\d{3}Z$/, 'Z')
 }
 
 export function convertMonthNumberToName(month: number | string): string {
