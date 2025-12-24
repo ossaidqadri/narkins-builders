@@ -367,6 +367,81 @@ const nextConfig = {
           "/blog/2025/08/dha-vs-bahria-town-vs-gulshan-luxury-living-comparison-2025",
         permanent: true,
       },
+      {
+        source: "/blog/hill-crest-investment-guide",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/blog/apartment-size-comparison",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/blog/best-areas-invest-bahria-town-2025",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/blogs/:slug",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/blogs/",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/blogs",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/comments/feed/",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/comments/feed",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/category/uncategorized/",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/category/uncategorized",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/feed/",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/feed",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/news/",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/news",
+        destination: "/blog/",
+        permanent: true,
+      },
+      {
+        source: "/blog/:slug",
+        destination: "/blog/",
+        permanent: true,
+      },
     ]
   },
   images: {
