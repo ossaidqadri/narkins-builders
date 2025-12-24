@@ -404,7 +404,7 @@ export default function HillCrestResidency({
         description="Explore Narkin's Boutique Residency featuring luxury 2-6 bedroom apartments with world-class amenities in Heritage Commercial, Bahria Town Karachi."
         videoUrl="https://youtube.com/watch?v=FmEHTzdjXEc"
         thumbnailUrl="https://i.ytimg.com/vi/FmEHTzdjXEc/maxresdefault.jpg"
-        uploadDate="2024-01-20"
+        uploadDate="2024-01-20T00:00:00Z"
         duration="PT4M15S"
         pageUrl="https://www.narkinsbuilders.com/narkins-boutique-residency"
       />

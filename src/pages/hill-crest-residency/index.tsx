@@ -407,7 +407,7 @@ export default function HillCrestResidency({
         description="Take a virtual tour of Hill Crest Residency featuring luxury 2, 3 & 4 bedroom apartments with modern amenities in Bahria Town Karachi by Narkin's Builders."
         videoUrl="https://youtube.com/watch?v=TSiLOTW2s4g"
         thumbnailUrl="https://i.ytimg.com/vi/TSiLOTW2s4g/maxresdefault.jpg"
-        uploadDate="2024-01-15"
+        uploadDate="2024-01-15T00:00:00Z"
         duration="PT3M45S"
         pageUrl="https://www.narkinsbuilders.com/hill-crest-residency"
       />
