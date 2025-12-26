@@ -1,5 +1,40 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { google } from "googleapis"
+import nodemailer from "nodemailer"
+
+async function sendEmailNotification(
+  name: string,
+  email: string,
+  phone: string,
+  property: string,
+  timestamp: string
+) {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+  })
+
+  const mailOptions = {
+    from: process.env.GMAIL_USER,
+    to: process.env.GMAIL_RECIPIENT,
+    subject: `New Lead: ${name} - ${property}`,
+    html: `
+      <h2>New Form Submission</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Interested Property:</strong> ${property}</p>
+      <p><strong>Submitted:</strong> ${timestamp}</p>
+      <hr>
+      <p>This lead has been added to your Google Sheet.</p>
+    `,
+  }
+
+  await transporter.sendMail(mailOptions)
+}
 
 export default async function handler(
   req: NextApiRequest,
@@ -38,17 +73,19 @@ export default async function handler(
     }
 
     // Prepare data for insertion
+    const formattedTimestamp = new Date(timestamp).toLocaleString("en-US", {
+      timeZone: "Asia/Karachi",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    })
+
     const values = [
       [
-        new Date(timestamp).toLocaleString("en-US", {
-          timeZone: "Asia/Karachi",
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-        }),
+        formattedTimestamp,
         name,
         email,
         phone,
@@ -62,12 +99,19 @@ export default async function handler(
     // Insert data into Google Sheets
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: "Sheet1!A:H", // Adjust range as needed
+      range: "Sheet1!A:H",
       valueInputOption: "RAW",
       requestBody: {
         values,
       },
     })
+
+    // Send email notification
+    try {
+      await sendEmailNotification(name, email, phone, property, formattedTimestamp)
+    } catch (emailError) {
+      console.error("Email notification failed:", emailError)
+    }
 
     return res.status(200).json({
       success: true,
@@ -75,7 +119,7 @@ export default async function handler(
       updatedRows: response.data.updates?.updatedRows || 0,
     })
   } catch (error) {
-    console.error("❌ Google Sheets API error:", error)
+    console.error("Google Sheets API error:", error)
 
     return res.status(500).json({
       success: false,
