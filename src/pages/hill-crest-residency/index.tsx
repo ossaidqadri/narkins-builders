@@ -26,7 +26,6 @@ import Testimonials from "@/components/features/testimonials/testimonials"
 import { getAllPostsServer } from "@/lib/blog-server"
 import SEOImage from "@/components/common/seo-image/seo-image"
 import { HillCrestResidencySchema } from "@/components/common/schema/HillCrestResidencySchema"
-import { VideoSchema } from "@/components/common/schema/VideoSchema"
 
 interface PostWithCategory extends BlogPost {
   id: number
@@ -402,15 +401,6 @@ export default function HillCrestResidency({
         />
       </Head>
       <HillCrestResidencySchema />
-      <VideoSchema
-        title="Hill Crest Residency Virtual Tour | Luxury Apartments in Bahria Town Karachi"
-        description="Take a virtual tour of Hill Crest Residency featuring luxury 2, 3 & 4 bedroom apartments with modern amenities in Bahria Town Karachi by Narkin's Builders."
-        videoUrl="https://youtube.com/watch?v=TSiLOTW2s4g"
-        thumbnailUrl="https://i.ytimg.com/vi/TSiLOTW2s4g/maxresdefault.jpg"
-        uploadDate="2024-01-15T00:00:00Z"
-        duration="PT3M45S"
-        pageUrl="https://www.narkinsbuilders.com/hill-crest-residency"
-      />
       <Navigation />
       <Lightbox />
       <div className="bg-white pt-[6rem]">

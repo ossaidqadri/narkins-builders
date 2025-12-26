@@ -26,7 +26,6 @@ import Testimonials from "@/components/features/testimonials/testimonials"
 import { getAllPostsServer } from "@/lib/blog-server"
 import SEOImage from "@/components/common/seo-image/seo-image"
 import { NarkinsBoutiqueResidencySchema } from "@/components/common/schema/NarkinsBoutiqueResidencySchema"
-import { VideoSchema } from "@/components/common/schema/VideoSchema"
 
 interface PostWithCategory extends BlogPost {
   id: number
@@ -399,15 +398,6 @@ export default function HillCrestResidency({
         />
       </Head>
       <NarkinsBoutiqueResidencySchema />
-      <VideoSchema
-        title="Narkin's Boutique Residency Luxury Tour | Premium Apartments in Heritage Commercial Bahria Town"
-        description="Explore Narkin's Boutique Residency featuring luxury 2-6 bedroom apartments with world-class amenities in Heritage Commercial, Bahria Town Karachi."
-        videoUrl="https://youtube.com/watch?v=FmEHTzdjXEc"
-        thumbnailUrl="https://i.ytimg.com/vi/FmEHTzdjXEc/maxresdefault.jpg"
-        uploadDate="2024-01-20T00:00:00Z"
-        duration="PT4M15S"
-        pageUrl="https://www.narkinsbuilders.com/narkins-boutique-residency"
-      />
       <Navigation />
       <Lightbox />
       <div className="bg-white pt-[6rem]">

@@ -1,40 +1,16 @@
-import { readdirSync, readFileSync, statSync } from 'fs'
-import { join, parse } from 'path'
+import { readdirSync, readFileSync } from 'fs'
+import { join } from 'path'
 import matter from 'gray-matter'
 import { VideoMetadata } from './types'
-import { constructFullUrl, extractDuration, formatISODate, convertMonthNumberToName } from './metadata'
+import { constructFullUrl, extractDuration, formatISODate } from './metadata'
 
-const PROPERTY_VIDEOS = [
-  {
-    pageUrl: '/hill-crest-residency',
-    videoUrl: '/media/hcr/videos/hillcrest.mp4',
-    title: 'Hill Crest Residency - Luxury Apartments Tour',
-    description: 'Virtual tour of Hill Crest Residency luxury apartments in Bahria Town Karachi',
-    thumbnailUrl: '/media/hcr/hill-crest-residency-featured.webp',
-  },
-  {
-    pageUrl: '/narkins-boutique-residency',
-    videoUrl: '/media/nbr/videos/nbr.mp4',
-    title: "Narkin's Boutique Residency - Premium Apartments",
-    description: "Explore Narkin's Boutique Residency premium apartments with Heritage Club views",
-    thumbnailUrl: '/media/nbr/narkins-boutique-residency-featured.webp',
-  },
-]
+// REMOVED: Property videos (hill-crest.mp4, nbr.mp4) are on non-watch pages
+// These should not be in video sitemap per Google's "watch page" requirement
+// Video embeds on property pages don't need VideoObject schema
 
-const YOUTUBE_VIDEO_PAGES: Record<string, string> = {
-  tT7kkMM0pz0: '/about',
-  '9pJsF3BciCA': '/about',
-  A3WkwMWBZ_8: '/about',
-  BLnpB8VTnJA: '/about',
-  TSiLOTW2s4g: '/hill-crest-residency',
-  '5zv639iO31w': '/hill-crest-residency',
-  D5YaV4CdaxE: '/hill-crest-residency',
-  iNbSrOL8HD4: '/hill-crest-residency',
-  FmEHTzdjXEc: '/narkins-boutique-residency',
-  uzYVdqFHovs: '/narkins-boutique-residency',
-  n8PT4z9MdRA: '/narkins-boutique-residency',
-  'DClpF8-xaS8': '/narkins-boutique-residency',
-}
+// REMOVED: YouTube videos don't need to be submitted in video sitemap
+// Google already indexes them on youtube.com; submitting them on non-watch pages causes validation errors
+// YouTube handles its own video discovery and indexing
 
 export async function detectBlogVideos(): Promise<VideoMetadata[]> {
   const videos: VideoMetadata[] = []
@@ -110,93 +86,18 @@ export async function detectBlogVideos(): Promise<VideoMetadata[]> {
 }
 
 export async function detectPropertyVideos(): Promise<VideoMetadata[]> {
-  const videos: VideoMetadata[] = []
-
-  for (const video of PROPERTY_VIDEOS) {
-    const videoMetadata: VideoMetadata = {
-      title: video.title,
-      description: video.description,
-      thumbnailUrl: constructFullUrl(video.thumbnailUrl),
-      contentUrl: constructFullUrl(video.videoUrl),
-      pageUrl: constructFullUrl(video.pageUrl),
-      familyFriendly: true,
-    }
-
-    // Extract duration
-    const duration = await extractDuration(video.videoUrl)
-    if (duration) {
-      videoMetadata.duration = duration
-    }
-
-    videos.push(videoMetadata)
-  }
-
-  console.log(`Found ${videos.length} property videos`)
-  return videos
-}
-
-interface YouTubeOembedResponse {
-  title?: string
-  thumbnail_url?: string
-  author_name?: string
-}
-
-interface YouTubeVideo {
-  id: string
-  title: string
-  description?: string
-  category?: string
-}
-
-async function fetchYouTubeMetadata(videoId: string): Promise<YouTubeOembedResponse | null> {
-  try {
-    const url = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`
-    const response = await fetch(url)
-
-    if (!response.ok) {
-      console.warn(`YouTube oEmbed failed for ${videoId}:`, response.statusText)
-      return null
-    }
-
-    return (await response.json()) as YouTubeOembedResponse
-  } catch (error) {
-    console.warn(`Error fetching YouTube metadata for ${videoId}:`, error instanceof Error ? error.message : String(error))
-    return null
-  }
+  // DISABLED: Property showcase videos (Hill Crest, Boutique Residency) are not on watch pages
+  // Per Google's requirement, VideoObject schema should only appear on pages dedicated to watching the video
+  // Property pages are informational/sales pages where video is supporting content, not primary purpose
+  console.log(`Found 0 property videos (property pages are not watch pages)`)
+  return []
 }
 
 export async function detectYouTubeVideos(): Promise<VideoMetadata[]> {
-  const videos: VideoMetadata[] = []
-
-  try {
-    // Import about-data to get YouTube video arrays
-    const { featuredVideos, hcrYoutubeVideos, nbrYoutubeVideos } = await import('../../data/about-data')
-
-    const allYoutubeVideos: Array<YouTubeVideo & { pageUrl: string }> = [
-      ...((featuredVideos as YouTubeVideo[]) || []).map((v) => ({ ...v, pageUrl: '/about' })),
-      ...((hcrYoutubeVideos as YouTubeVideo[]) || []).map((v) => ({ ...v, pageUrl: '/hill-crest-residency' })),
-      ...((nbrYoutubeVideos as YouTubeVideo[]) || []).map((v) => ({ ...v, pageUrl: '/narkins-boutique-residency' })),
-    ]
-
-    for (const youtubeVideo of allYoutubeVideos) {
-      const oembedData = await fetchYouTubeMetadata(youtubeVideo.id)
-
-      const videoMetadata: VideoMetadata = {
-        title: oembedData?.title || youtubeVideo.title || 'Narkin\'s Builders Video',
-        description: youtubeVideo.description || 'Video content from Narkin\'s Builders',
-        thumbnailUrl: oembedData?.thumbnail_url || `https://img.youtube.com/vi/${youtubeVideo.id}/maxresdefault.jpg`,
-        playerUrl: `https://www.youtube.com/watch?v=${youtubeVideo.id}`,
-        pageUrl: constructFullUrl(youtubeVideo.pageUrl),
-        familyFriendly: true,
-      }
-
-      videos.push(videoMetadata)
-    }
-
-    console.log(`Found ${videos.length} YouTube videos`)
-  } catch (error) {
-    console.warn('Error detecting YouTube videos:', error instanceof Error ? error.message : String(error))
-  }
-
-  return videos
+  // DISABLED: YouTube videos don't need to be in our video sitemap
+  // Google already indexes YouTube videos on youtube.com and their own platform
+  // Submitting YouTube videos on non-watch pages (About, property pages) causes "Video isn't on a watch page" errors
+  // YouTube handles video discovery and SEO for its own platform
+  console.log(`Found 0 YouTube videos (YouTube handles its own video indexing)`)
+  return []
 }
