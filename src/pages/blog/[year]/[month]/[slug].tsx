@@ -175,6 +175,19 @@ export default function BlogPost({
     },
   }
 
+  const howToSchema = post.howToSteps ? {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: post.howToTitle || post.title,
+    description: post.excerpt || "",
+    step: post.howToSteps.map((step: any, index: number) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  } : null
+
   return (
     <>
       <Head>
@@ -266,6 +279,12 @@ export default function BlogPost({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+        {howToSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+          />
+        )}
       </Head>
 
       <BlogLayout
