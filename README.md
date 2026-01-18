@@ -57,7 +57,7 @@ This application follows a modern full-stack architecture with the following lay
 - State: Zustand + React hooks
 
 ### Backend & Services
-- Runtime: Bun (recommended)
+- Runtime: Bun (recommended) or Node
 - CMS: TinaCMS with Git workflow
 - Database: MySQL2
 - Authentication: JWT + bcryptjs
